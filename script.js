@@ -38,7 +38,7 @@
   tick();
 })();
 
-// Reveal surpresa
+// Reveal surpresa (agora revela a cartinha)
 (function () {
   const btn = document.getElementById("revealBtn");
   const box = document.getElementById("revealBox");
