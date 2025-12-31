@@ -3,55 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feliz aniversário, Hanna 💗</title>
-  <meta name="description" content="Um site especial de aniversário para a Hanna." />
+  <title>Feliz aniversário, Hanna 🍷💗</title>
+  <meta name="description" content="Um site de feliz aniversário feito com amor para a Hanna — fotos, memórias e uma carta." />
+
+  <!-- Fonts (elegante + moderno) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%8D%B7%3C/text%3E%3C/svg%3E">
 </head>
 
 <body>
-  <div class="bg-glow"></div>
+  <!-- fundo decorativo -->
+  <div class="bg">
+    <div class="grain"></div>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
 
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <div class="brand">✨ Hanna Day</div>
+      <a class="brand" href="#topo">
+        <span class="brand-mark">H</span>
+        <span class="brand-name">Hanna</span>
+      </a>
+
       <nav class="nav">
         <a href="#carta">Carta</a>
-        <a href="#galeria">Fotos</a>
-        <a href="#linha-do-tempo">Momentos</a>
+        <a href="#memorias">Memórias</a>
+        <a href="#motivos">Motivos</a>
         <a href="#surpresa">Surpresa</a>
       </nav>
+
+      <button class="menu" id="menuBtn" aria-label="Abrir menu" aria-expanded="false">Menu</button>
+    </div>
+
+    <div class="mobile-nav wrap" id="mobileNav">
+      <a href="#carta">Carta</a>
+      <a href="#memorias">Memórias</a>
+      <a href="#motivos">Motivos</a>
+      <a href="#surpresa">Surpresa</a>
     </div>
   </header>
 
-  <main>
+  <main id="topo">
     <!-- HERO -->
-    <section class="hero wrap" id="topo">
-      <div class="hero-card">
-        <div class="hero-left">
-          <p class="kicker">para a minha Hanna 💗</p>
-          <h1>Feliz aniversário, <span class="accent">Hanna</span>.</h1>
-          <p class="subtitle" id="typewriter">
-            Hoje eu só queria te lembrar do quanto você é amada — e do quanto eu sou sortudo por te ter.
+    <section class="hero wrap">
+      <div class="hero-grid">
+        <div class="hero-copy card">
+          <p class="kicker">feliz aniversário, meu amor 🍷💗</p>
+          <h1>
+            Hanna, você é
+            <span class="accent">a minha parte favorita</span>
+            de todos os dias.
+          </h1>
+
+          <p class="lead" id="typewriter">
+            Eu fiz esse cantinho pra você abrir quando quiser e lembrar: você é amada, admirada e cuidada — por mim.
           </p>
 
-          <div class="hero-actions">
-            <button class="btn primary" id="btn-confetti">Soltar confete 🎉</button>
-            <a class="btn" href="#carta">Ler minha carta →</a>
+          <div class="actions">
+            <button class="btn primary" id="confettiBtn">soltar confete ✨</button>
+            <a class="btn ghost" href="#carta">ler a carta</a>
           </div>
 
-          <div class="mini">
-            <div class="chip">💌 Feito com carinho</div>
-            <div class="chip">📸 Com nossas fotos</div>
-            <div class="chip">🌙 Para guardar pra sempre</div>
+          <div class="chips">
+            <span class="chip">vinho pastel</span>
+            <span class="chip">nossas fotos</span>
+            <span class="chip">pra guardar</span>
           </div>
+
+          <p class="mini-note">
+            <span class="dot"></span>
+            Dica: abra com calma, e se quiser, coloca uma música nossa de fundo.
+          </p>
         </div>
 
-        <div class="hero-right">
-          <div class="photo-frame">
-            <!-- Troque 01.jpg por uma foto bem “capa” -->
-            <img src="assets/photos/01.jpg" alt="Foto da Hanna (e nossa)" />
-            <div class="photo-caption">você é meu lugar favorito ✨</div>
+        <div class="hero-photo card">
+          <div class="frame">
+            <img src="assets/photos/01.jpg" alt="Hanna — a primeira foto que eu tive de você no meu celular" />
+            <div class="overlay">
+              <div class="ov-title">A primeira de todas.</div>
+              <div class="ov-text">A primeira foto que eu tive de você no meu celular — e sem saber, eu já estava ficando.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -60,27 +97,33 @@
     <!-- CARTA -->
     <section class="section wrap" id="carta">
       <div class="section-head">
-        <h2>Uma carta curtinha (mas cheia) 💌</h2>
-        <p>Edite este texto do seu jeito. O site já fica lindo só com isso.</p>
+        <h2>Uma carta pra você 💌</h2>
+        <p>Eu deixei bem romântico e bem “Hanna”. Se quiser, me diga seu nome e eu coloco assinado certinho.</p>
       </div>
 
-      <article class="letter card">
+      <article class="card letter">
         <p>Hanna,</p>
 
         <p>
-          Hoje é o seu dia, e eu queria te dar um presente que fosse mais do que “algo” — queria te dar
-          um lugar. Um cantinho na internet onde cabe o que eu sinto quando penso em você.
+          Hoje é o seu aniversário — e eu queria te dar algo que você pudesse abrir em qualquer dia,
+          quando a saudade apertar ou quando você só quiser sentir um abraço por escrito.
         </p>
 
         <p>
-          Obrigado por ser essa pessoa que ilumina tudo sem fazer esforço. Por me fazer rir, por me
-          acolher, por existir do jeitinho que você é. Eu amo o seu jeito, a sua voz, seu coração,
-          seus sonhos… e amo a nossa história.
+          Eu amo você do jeito bonito: no detalhe, no cotidiano, nas risadas pequenas, nos jeitos que só eu reparo.
+          Amo o seu sorriso quando você se sente segura, amo a sua delicadeza (mesmo quando você tenta disfarçar),
+          amo a força que você tem sem precisar provar nada pra ninguém.
         </p>
 
         <p>
-          Que esse novo ano de vida te abrace com leveza, saúde e coragem. E que eu continue ao seu
-          lado — te aplaudindo por dentro, te segurando por fora, e te amando em voz alta.
+          Obrigado por existir do jeito que você existe. Por fazer o mundo ficar mais macio quando você entra nele.
+          Eu tenho um orgulho enorme de você — e uma vontade ainda maior de continuar construindo “a gente”, com calma,
+          carinho e verdade.
+        </p>
+
+        <p>
+          Que esse novo ano te traga leveza, saúde, sonhos possíveis e coragem pra buscar os impossíveis.
+          E que você nunca esqueça: você merece o melhor — e eu vou estar aqui, torcendo, cuidando e amando.
         </p>
 
         <p class="signature">
@@ -90,68 +133,142 @@
       </article>
     </section>
 
-    <!-- GALERIA -->
-    <section class="section wrap" id="galeria">
+    <!-- MEMÓRIAS (8 fotos com legendas) -->
+    <section class="section wrap" id="memorias">
       <div class="section-head">
-        <h2>Nossas fotos 📷</h2>
-        <p>Clique nas fotos para ampliar. Troque/adicione quantas quiser.</p>
+        <h2>Oito fotos, oito lembranças 📸</h2>
+        <p>Clica em qualquer foto pra ampliar. Eu coloquei as legendas com as histórias que você me contou.</p>
       </div>
 
       <div class="grid gallery" id="gallery">
-        <!-- Troque as fotos na pasta assets/photos/ e ajuste aqui se quiser -->
-        <button class="tile" data-full="assets/photos/01.jpg" aria-label="Abrir foto 1">
-          <img src="assets/photos/01.jpg" alt="Foto 1" loading="lazy" />
+        <!-- 01 -->
+        <button class="tile" data-full="assets/photos/01.jpg"
+                data-title="A primeira foto"
+                data-desc="A primeira foto que eu tive de você no meu celular — desde que a gente começou a sair. O começo de tudo."
+                aria-label="Abrir foto 1">
+          <img src="assets/photos/01.jpg" alt="Foto 1 — a primeira foto que eu tive dela" loading="lazy" />
+          <div class="tile-cap">
+            <strong>A primeira foto</strong>
+            <span>o começo de tudo</span>
+          </div>
         </button>
-        <button class="tile" data-full="assets/photos/02.jpg" aria-label="Abrir foto 2">
-          <img src="assets/photos/02.jpg" alt="Foto 2" loading="lazy" />
+
+        <!-- 02 -->
+        <button class="tile" data-full="assets/photos/02.jpg"
+                data-title="Meu moletom em você"
+                data-desc="Você usando o meu moletom que eu te dei quando voltei pra BH. Foi aí que eu senti: você mora em mim."
+                aria-label="Abrir foto 2">
+          <img src="assets/photos/02.jpg" alt="Foto 2 — ela usando meu moletom" loading="lazy" />
+          <div class="tile-cap">
+            <strong>Meu moletom</strong>
+            <span>e você dentro dele</span>
+          </div>
         </button>
-        <button class="tile" data-full="assets/photos/03.jpg" aria-label="Abrir foto 3">
-          <img src="assets/photos/03.jpg" alt="Foto 3" loading="lazy" />
+
+        <!-- 03 -->
+        <button class="tile" data-full="assets/photos/03.jpg"
+                data-title="O pedido de namoro"
+                data-desc="Uma foto nossa do dia em que eu te pedi em namoro. Eu lembro do coração acelerado — e da certeza."
+                aria-label="Abrir foto 3">
+          <img src="assets/photos/03.jpg" alt="Foto 3 — o dia do pedido de namoro" loading="lazy" />
+          <div class="tile-cap">
+            <strong>Nosso sim</strong>
+            <span>o dia do pedido</span>
+          </div>
         </button>
-        <button class="tile" data-full="assets/photos/04.jpg" aria-label="Abrir foto 4">
-          <img src="assets/photos/04.jpg" alt="Foto 4" loading="lazy" />
+
+        <!-- 04 -->
+        <button class="tile" data-full="assets/photos/04.jpg"
+                data-title="A foto da carteira"
+                data-desc="A sua foto que eu guardo na minha carteira — e vejo sempre que a saudade aparece. Meu lembrete preferido."
+                aria-label="Abrir foto 4">
+          <img src="assets/photos/04.jpg" alt="Foto 4 — foto dela na minha carteira" loading="lazy" />
+          <div class="tile-cap">
+            <strong>Meu antídoto</strong>
+            <span>contra saudade</span>
+          </div>
         </button>
-        <button class="tile" data-full="assets/photos/05.jpg" aria-label="Abrir foto 5">
-          <img src="assets/photos/05.jpg" alt="Foto 5" loading="lazy" />
+
+        <!-- 05 -->
+        <button class="tile" data-full="assets/photos/05.jpg"
+                data-title="Halloween — 10 Coisas que Eu Odeio em Você"
+                data-desc="A nossa fantasia de 10 Coisas que Eu Odeio Sobre Você. A gente ficou ridiculamente lindo (e eu amei)."
+                aria-label="Abrir foto 5">
+          <img src="assets/photos/05.jpg" alt="Foto 5 — fantasia de halloween" loading="lazy" />
+          <div class="tile-cap">
+            <strong>Halloween</strong>
+            <span>nós dois, juntos</span>
+          </div>
         </button>
-        <button class="tile" data-full="assets/photos/06.jpg" aria-label="Abrir foto 6">
-          <img src="assets/photos/06.jpg" alt="Foto 6" loading="lazy" />
+
+        <!-- 06 -->
+        <button class="tile" data-full="assets/photos/06.jpg"
+                data-title="Sua visita em BH"
+                data-desc="Uma foto nossa quando você foi me visitar em BH. Você chegou e minha cidade ficou melhor."
+                aria-label="Abrir foto 6">
+          <img src="assets/photos/06.jpg" alt="Foto 6 — ela me visitando em BH" loading="lazy" />
+          <div class="tile-cap">
+            <strong>BH com você</strong>
+            <span>fica diferente</span>
+          </div>
+        </button>
+
+        <!-- 07 -->
+        <button class="tile" data-full="assets/photos/07.jpg"
+                data-title="Você (linda demais)"
+                data-desc="Uma foto sua sozinha. Daquelas que eu olho e penso: como pode alguém ser tão linda assim?"
+                aria-label="Abrir foto 7">
+          <img src="assets/photos/07.jpg" alt="Foto 7 — ela sozinha" loading="lazy" />
+          <div class="tile-cap">
+            <strong>Você</strong>
+            <span>absurdamente linda</span>
+          </div>
+        </button>
+
+        <!-- 08 -->
+        <button class="tile" data-full="assets/photos/08.jpg"
+                data-title="Você (de novo, arte)"
+                data-desc="Outra sua sozinha, linda. Eu guardo como prova de que você é arte — e eu sou privilegiado por ver de perto."
+                aria-label="Abrir foto 8">
+          <img src="assets/photos/08.jpg" alt="Foto 8 — ela sozinha" loading="lazy" />
+          <div class="tile-cap">
+            <strong>Arte</strong>
+            <span>com seu nome</span>
+          </div>
         </button>
       </div>
 
-      <div class="note card">
-        <h3>Pequenas coisas que eu amo em você</h3>
-        <ul class="bullets">
-          <li>o jeito que você olha quando está feliz</li>
-          <li>como você cuida das pessoas que ama</li>
-          <li>como você transforma dias comuns em memórias</li>
-          <li>o seu jeitinho único, que é só seu</li>
-        </ul>
+      <div class="card quote">
+        <p class="q">
+          “Eu gosto de você no detalhe. No jeito de segurar o mundo, no jeito de sorrir, no jeito de ficar.”
+        </p>
+        <p class="q-author">— eu, sempre que penso em você</p>
       </div>
     </section>
 
-    <!-- LINHA DO TEMPO -->
-    <section class="section wrap" id="linha-do-tempo">
+    <!-- MOTIVOS -->
+    <section class="section wrap" id="motivos">
       <div class="section-head">
-        <h2>Nossa linha do tempo ⏳</h2>
-        <p>Coloque datas reais, detalhes e “momentos internos” de vocês.</p>
+        <h2>Alguns motivos (entre mil) 🌹</h2>
+        <p>Você pode trocar por coisas bem internas de vocês — fica ainda mais forte.</p>
       </div>
 
-      <div class="timeline">
-        <div class="t-item card">
-          <div class="t-date">📍 (data)</div>
-          <div class="t-title">O dia em que eu te vi diferente</div>
-          <div class="t-text">Eu lembro exatamente do que eu senti: “é ela”.</div>
+      <div class="grid reasons">
+        <div class="card reason">
+          <h3>Seu jeito</h3>
+          <p>Você tem um jeito de existir que acalma. Como se o mundo lembrasse que dá pra ser leve.</p>
         </div>
-        <div class="t-item card">
-          <div class="t-date">✨ (data)</div>
-          <div class="t-title">Nosso primeiro momento “a gente”</div>
-          <div class="t-text">Uma cena simples… e eu já me via ficando.</div>
+        <div class="card reason">
+          <h3>Seu coração</h3>
+          <p>Você cuida de quem ama. E quando ama, ama bonito — com presença, com verdade.</p>
         </div>
-        <div class="t-item card">
-          <div class="t-date">🌙 (data)</div>
-          <div class="t-title">Um dia difícil que virou abraço</div>
-          <div class="t-text">Você me ensinou que amor também é calma.</div>
+        <div class="card reason">
+          <h3>Você comigo</h3>
+          <p>Você me faz querer ser melhor sem me fazer sentir menos. Isso é raro. Isso é amor.</p>
+        </div>
+        <div class="card reason">
+          <h3>Você por você</h3>
+          <p>Porque você é você. E eu não trocaria isso por nada.</p>
         </div>
       </div>
     </section>
@@ -159,41 +276,55 @@
     <!-- SURPRESA -->
     <section class="section wrap" id="surpresa">
       <div class="section-head">
-        <h2>Uma surpresa final 🎁</h2>
-        <p>Clique quando estiver pronta.</p>
+        <h2>Uma última coisinha 🎁</h2>
+        <p>Clica quando estiver pronta, Hanna.</p>
       </div>
 
       <div class="card surprise">
-        <button class="btn primary big" id="reveal">Clique aqui, Hanna 💗</button>
-        <div class="reveal hidden" id="reveal-box">
-          <h3>Você é o meu amor do jeitinho mais bonito.</h3>
+        <button class="btn primary big" id="revealBtn">Clique aqui 💗</button>
+        <div class="reveal hidden" id="revealBox">
+          <h3>Você é meu amor do jeito mais bonito.</h3>
           <p>
             Se eu pudesse te dar um presente impossível, eu te daria todos os dias bons que ainda não chegaram.
-            Como eu não posso, eu te dou isso aqui: uma promessa simples — eu vou estar do seu lado, com cuidado,
-            orgulho e amor.
+            Como eu não posso… eu te dou isso aqui: um lugar com a nossa história, e uma promessa tranquila —
+            eu vou continuar te escolhendo, com carinho, respeito e amor.
           </p>
-          <p class="muted">Agora aperta o confete ali em cima 😄</p>
+          <p class="muted">Agora aperta o confete lá em cima 😄</p>
         </div>
       </div>
     </section>
 
-    <footer class="footer wrap">
-      <div class="footer-inner card">
-        <div>Feito especialmente para a Hanna. 💗</div>
-        <div class="muted">Dica: você pode guardar esse link pra sempre.</div>
+    <footer class="wrap footer">
+      <div class="card footer-card">
+        <div class="footer-left">
+          <div class="brand small">
+            <span class="brand-mark">H</span>
+            <span class="brand-name">Hanna</span>
+          </div>
+          <p class="muted">
+            Feito pra você abrir quantas vezes quiser. 💗
+          </p>
+        </div>
+        <div class="footer-right">
+          <span class="muted">© <span id="year"></span> — feito com amor.</span>
+        </div>
       </div>
     </footer>
   </main>
 
-  <!-- LIGHTBOX -->
+  <!-- Lightbox -->
   <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">✕</button>
-    <img id="lightboxImg" alt="Foto ampliada" />
+    <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
+    <div class="lb-card">
+      <img id="lbImg" alt="Foto ampliada" />
+      <div class="lb-meta">
+        <div class="lb-title" id="lbTitle"></div>
+        <div class="lb-desc" id="lbDesc"></div>
+      </div>
+    </div>
   </div>
 
-  <!-- CANVAS CONFETTI -->
   <canvas id="confetti"></canvas>
-
   <script src="script.js"></script>
 </body>
 </html>
