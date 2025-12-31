@@ -30,51 +30,12 @@
   const full = el.textContent.trim();
   el.textContent = "";
   let i = 0;
-  const speed = 14;
 
   const tick = () => {
     el.textContent = full.slice(0, i++);
-    if (i <= full.length) setTimeout(tick, speed);
+    if (i <= full.length) setTimeout(tick, 12);
   };
   tick();
-})();
-
-// Lightbox (com título e descrição)
-(function () {
-  const gallery = document.getElementById("gallery");
-  const lb = document.getElementById("lightbox");
-  const lbImg = document.getElementById("lbImg");
-  const lbTitle = document.getElementById("lbTitle");
-  const lbDesc = document.getElementById("lbDesc");
-  const close = document.getElementById("lbClose");
-
-  if (!gallery || !lb || !lbImg || !lbTitle || !lbDesc || !close) return;
-
-  const open = (src, title, desc) => {
-    lbImg.src = src;
-    lbTitle.textContent = title || "";
-    lbDesc.textContent = desc || "";
-    lb.classList.remove("hidden");
-    document.body.style.overflow = "hidden";
-  };
-
-  const shut = () => {
-    lb.classList.add("hidden");
-    lbImg.src = "";
-    lbTitle.textContent = "";
-    lbDesc.textContent = "";
-    document.body.style.overflow = "";
-  };
-
-  gallery.addEventListener("click", (e) => {
-    const tile = e.target.closest(".tile");
-    if (!tile) return;
-    open(tile.dataset.full, tile.dataset.title, tile.dataset.desc);
-  });
-
-  close.addEventListener("click", shut);
-  lb.addEventListener("click", (e) => { if (e.target === lb) shut(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") shut(); });
 })();
 
 // Reveal surpresa
@@ -90,11 +51,11 @@
   });
 })();
 
-// Confetti vinho pastel
+// Confetti vinho pastel (auto ao abrir + botão)
 (function () {
   const canvas = document.getElementById("confetti");
   const btn = document.getElementById("confettiBtn");
-  if (!canvas || !btn) return;
+  if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
   let W = 0, H = 0;
@@ -114,22 +75,22 @@
   let running = false;
   let tEnd = 0;
 
-  const spawn = (n=220) => {
+  const spawn = (n=240) => {
     const cx = window.innerWidth / 2;
     const cy = -10;
     for (let i=0; i<n; i++){
       parts.push({
-        x: cx + (Math.random()*160 - 80),
+        x: cx + (Math.random()*200 - 100),
         y: cy + (Math.random()*20),
-        vx: (Math.random()*2 - 1) * 4.2,
-        vy: (Math.random()*-1.2 - 0.15) * 8.5,
+        vx: (Math.random()*2 - 1) * 4.3,
+        vy: (Math.random()*-1.2 - 0.15) * 9.0,
         g: 0.20 + Math.random()*0.12,
         w: 6 + Math.random()*7,
         h: 7 + Math.random()*10,
         rot: Math.random()*Math.PI,
         vr: (Math.random()*2 - 1) * 0.22,
         c: colors[Math.floor(Math.random()*colors.length)],
-        life: 130 + Math.random()*90
+        life: 140 + Math.random()*95
       });
     }
   };
@@ -150,7 +111,7 @@
       ctx.translate(p.x, p.y);
       ctx.rotate(p.rot);
       ctx.fillStyle = p.c;
-      ctx.globalAlpha = Math.max(0, Math.min(1, p.life/140));
+      ctx.globalAlpha = Math.max(0, Math.min(1, p.life/160));
       ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
       ctx.restore();
     }
@@ -163,10 +124,18 @@
     requestAnimationFrame(step);
   };
 
-  btn.addEventListener("click", () => {
-    spawn(240);
+  const blast = () => {
+    spawn(260);
     running = true;
-    tEnd = performance.now() + 2400;
+    tEnd = performance.now() + 2600;
     requestAnimationFrame(step);
+  };
+
+  // botão
+  if (btn) btn.addEventListener("click", blast);
+
+  // confete automático ao abrir o link (com pequeno delay pra garantir layout)
+  window.addEventListener("load", () => {
+    setTimeout(blast, 250);
   });
 })();

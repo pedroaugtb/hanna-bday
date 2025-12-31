@@ -6,13 +6,13 @@
   <title>Feliz aniversário, Hanna 🍷💗</title>
   <meta name="description" content="Um site de feliz aniversário feito com amor para a Hanna — fotos, memórias e uma carta." />
 
-  <!-- Fonts (elegante + moderno) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%8D%B7%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
 </head>
 
 <body>
@@ -33,8 +33,7 @@
 
       <nav class="nav">
         <a href="#carta">Carta</a>
-        <a href="#memorias">Memórias</a>
-        <a href="#motivos">Motivos</a>
+        <a href="#memorias">Fotos</a>
         <a href="#surpresa">Surpresa</a>
       </nav>
 
@@ -43,8 +42,7 @@
 
     <div class="mobile-nav wrap" id="mobileNav">
       <a href="#carta">Carta</a>
-      <a href="#memorias">Memórias</a>
-      <a href="#motivos">Motivos</a>
+      <a href="#memorias">Fotos</a>
       <a href="#surpresa">Surpresa</a>
     </div>
   </header>
@@ -54,40 +52,25 @@
     <section class="hero wrap">
       <div class="hero-grid">
         <div class="hero-copy card">
-          <p class="kicker">feliz aniversário, meu amor 🍷💗</p>
-          <h1>
-            Hanna, você é
-            <span class="accent">a minha parte favorita</span>
-            de todos os dias.
-          </h1>
+          <h1>Feliz Aniversario Meu Amor</h1>
 
           <p class="lead" id="typewriter">
-            Eu fiz esse cantinho pra você abrir quando quiser e lembrar: você é amada, admirada e cuidada — por mim.
+            Posso não saber fazer corações de cera, mas às vezes ser garoto de programa tem suas vantagens.
           </p>
 
           <div class="actions">
             <button class="btn primary" id="confettiBtn">soltar confete ✨</button>
             <a class="btn ghost" href="#carta">ler a carta</a>
           </div>
-
-          <div class="chips">
-            <span class="chip">vinho pastel</span>
-            <span class="chip">nossas fotos</span>
-            <span class="chip">pra guardar</span>
-          </div>
-
-          <p class="mini-note">
-            <span class="dot"></span>
-            Dica: abra com calma, e se quiser, coloca uma música nossa de fundo.
-          </p>
         </div>
 
         <div class="hero-photo card">
           <div class="frame">
-            <img src="assets/photos/01.jpg" alt="Hanna — a primeira foto que eu tive de você no meu celular" />
+            <!-- PRIMEIRA IMAGEM: FOTO 05 (Halloween) -->
+            <img src="assets/photos/05.jpg" alt="Nós no Halloween" />
             <div class="overlay">
-              <div class="ov-title">A primeira de todas.</div>
-              <div class="ov-text">A primeira foto que eu tive de você no meu celular — e sem saber, eu já estava ficando.</div>
+              <div class="ov-title">10 coisas que amo em você.</div>
+              <div class="ov-text">A gente juntinho, fantasiados — e eu ainda mais apaixonado por você.</div>
             </div>
           </div>
         </div>
@@ -98,7 +81,6 @@
     <section class="section wrap" id="carta">
       <div class="section-head">
         <h2>Uma carta pra você 💌</h2>
-        <p>Eu deixei bem romântico e bem “Hanna”. Se quiser, me diga seu nome e eu coloco assinado certinho.</p>
       </div>
 
       <article class="card letter">
@@ -133,143 +115,78 @@
       </article>
     </section>
 
-    <!-- MEMÓRIAS (8 fotos com legendas) -->
+    <!-- MEMÓRIAS -->
     <section class="section wrap" id="memorias">
       <div class="section-head">
-        <h2>Oito fotos, oito lembranças 📸</h2>
-        <p>Clica em qualquer foto pra ampliar. Eu coloquei as legendas com as histórias que você me contou.</p>
+        <h2>Minha Princesa</h2>
+        <p>Cada foto aqui é um pedacinho de você comigo. 💗</p>
       </div>
 
-      <div class="grid gallery" id="gallery">
-        <!-- 01 -->
-        <button class="tile" data-full="assets/photos/01.jpg"
-                data-title="A primeira foto"
-                data-desc="A primeira foto que eu tive de você no meu celular — desde que a gente começou a sair. O começo de tudo."
-                aria-label="Abrir foto 1">
-          <img src="assets/photos/01.jpg" alt="Foto 1 — a primeira foto que eu tive dela" loading="lazy" />
+      <!-- SEM LIGHTBOX: imagens clicáveis abrem em nova aba -->
+      <div class="grid gallery">
+        <a class="tile" href="assets/photos/01.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 1 em nova aba">
+          <img src="assets/photos/01.jpg" alt="Foto 1" loading="lazy" />
           <div class="tile-cap">
-            <strong>A primeira foto</strong>
-            <span>o começo de tudo</span>
+            <strong>adoro vc nerd</strong>
+            <span>A primeira foto que eu tive de você no meu celular desde que começamos a sair.</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 02 -->
-        <button class="tile" data-full="assets/photos/02.jpg"
-                data-title="Meu moletom em você"
-                data-desc="Você usando o meu moletom que eu te dei quando voltei pra BH. Foi aí que eu senti: você mora em mim."
-                aria-label="Abrir foto 2">
-          <img src="assets/photos/02.jpg" alt="Foto 2 — ela usando meu moletom" loading="lazy" />
+        <a class="tile" href="assets/photos/02.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 2 em nova aba">
+          <img src="assets/photos/02.jpg" alt="Foto 2" loading="lazy" />
           <div class="tile-cap">
-            <strong>Meu moletom</strong>
-            <span>e você dentro dele</span>
+            <strong>vc e meu moletom que roubou de mim</strong>
+            <span>e ficou ainda mais perfeito em você.</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 03 -->
-        <button class="tile" data-full="assets/photos/03.jpg"
-                data-title="O pedido de namoro"
-                data-desc="Uma foto nossa do dia em que eu te pedi em namoro. Eu lembro do coração acelerado — e da certeza."
-                aria-label="Abrir foto 3">
-          <img src="assets/photos/03.jpg" alt="Foto 3 — o dia do pedido de namoro" loading="lazy" />
+        <a class="tile" href="assets/photos/03.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 3 em nova aba">
+          <img src="assets/photos/03.jpg" alt="Foto 3" loading="lazy" />
           <div class="tile-cap">
-            <strong>Nosso sim</strong>
-            <span>o dia do pedido</span>
+            <strong>o dia que vc se tornou minha</strong>
+            <span>o dia do nosso “sim”.</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 04 -->
-        <button class="tile" data-full="assets/photos/04.jpg"
-                data-title="A foto da carteira"
-                data-desc="A sua foto que eu guardo na minha carteira — e vejo sempre que a saudade aparece. Meu lembrete preferido."
-                aria-label="Abrir foto 4">
-          <img src="assets/photos/04.jpg" alt="Foto 4 — foto dela na minha carteira" loading="lazy" />
+        <a class="tile" href="assets/photos/04.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 4 em nova aba">
+          <img src="assets/photos/04.jpg" alt="Foto 4" loading="lazy" />
           <div class="tile-cap">
             <strong>Meu antídoto</strong>
-            <span>contra saudade</span>
+            <span>contra saudade (a foto da minha carteira).</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 05 -->
-        <button class="tile" data-full="assets/photos/05.jpg"
-                data-title="Halloween — 10 Coisas que Eu Odeio em Você"
-                data-desc="A nossa fantasia de 10 Coisas que Eu Odeio Sobre Você. A gente ficou ridiculamente lindo (e eu amei)."
-                aria-label="Abrir foto 5">
-          <img src="assets/photos/05.jpg" alt="Foto 5 — fantasia de halloween" loading="lazy" />
+        <a class="tile" href="assets/photos/05.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 5 em nova aba">
+          <img src="assets/photos/05.jpg" alt="Foto 5" loading="lazy" />
           <div class="tile-cap">
-            <strong>Halloween</strong>
-            <span>nós dois, juntos</span>
+            <strong>10 coisas que amo em vc</strong>
+            <span>Halloween com você é melhor.</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 06 -->
-        <button class="tile" data-full="assets/photos/06.jpg"
-                data-title="Sua visita em BH"
-                data-desc="Uma foto nossa quando você foi me visitar em BH. Você chegou e minha cidade ficou melhor."
-                aria-label="Abrir foto 6">
-          <img src="assets/photos/06.jpg" alt="Foto 6 — ela me visitando em BH" loading="lazy" />
+        <a class="tile" href="assets/photos/06.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 6 em nova aba">
+          <img src="assets/photos/06.jpg" alt="Foto 6" loading="lazy" />
           <div class="tile-cap">
-            <strong>BH com você</strong>
-            <span>fica diferente</span>
+            <strong>adoro suas visitas</strong>
+            <span>BH com você fica diferente.</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 07 -->
-        <button class="tile" data-full="assets/photos/07.jpg"
-                data-title="Você (linda demais)"
-                data-desc="Uma foto sua sozinha. Daquelas que eu olho e penso: como pode alguém ser tão linda assim?"
-                aria-label="Abrir foto 7">
-          <img src="assets/photos/07.jpg" alt="Foto 7 — ela sozinha" loading="lazy" />
+        <a class="tile" href="assets/photos/07.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 7 em nova aba">
+          <img src="assets/photos/07.jpg" alt="Foto 7" loading="lazy" />
           <div class="tile-cap">
-            <strong>Você</strong>
-            <span>absurdamente linda</span>
+            <strong>amor vc é muito linda</strong>
+            <span>eu fico bobo.</span>
           </div>
-        </button>
+        </a>
 
-        <!-- 08 -->
-        <button class="tile" data-full="assets/photos/08.jpg"
-                data-title="Você (de novo, arte)"
-                data-desc="Outra sua sozinha, linda. Eu guardo como prova de que você é arte — e eu sou privilegiado por ver de perto."
-                aria-label="Abrir foto 8">
-          <img src="assets/photos/08.jpg" alt="Foto 8 — ela sozinha" loading="lazy" />
+        <a class="tile" href="assets/photos/08.jpg" target="_blank" rel="noopener" aria-label="Abrir foto 8 em nova aba">
+          <img src="assets/photos/08.jpg" alt="Foto 8" loading="lazy" />
           <div class="tile-cap">
-            <strong>Arte</strong>
-            <span>com seu nome</span>
+            <strong>meudeus eu amo muito minha namorada</strong>
+            <span>e eu não canso de dizer.</span>
           </div>
-        </button>
-      </div>
-
-      <div class="card quote">
-        <p class="q">
-          “Eu gosto de você no detalhe. No jeito de segurar o mundo, no jeito de sorrir, no jeito de ficar.”
-        </p>
-        <p class="q-author">— eu, sempre que penso em você</p>
-      </div>
-    </section>
-
-    <!-- MOTIVOS -->
-    <section class="section wrap" id="motivos">
-      <div class="section-head">
-        <h2>Alguns motivos (entre mil) 🌹</h2>
-        <p>Você pode trocar por coisas bem internas de vocês — fica ainda mais forte.</p>
-      </div>
-
-      <div class="grid reasons">
-        <div class="card reason">
-          <h3>Seu jeito</h3>
-          <p>Você tem um jeito de existir que acalma. Como se o mundo lembrasse que dá pra ser leve.</p>
-        </div>
-        <div class="card reason">
-          <h3>Seu coração</h3>
-          <p>Você cuida de quem ama. E quando ama, ama bonito — com presença, com verdade.</p>
-        </div>
-        <div class="card reason">
-          <h3>Você comigo</h3>
-          <p>Você me faz querer ser melhor sem me fazer sentir menos. Isso é raro. Isso é amor.</p>
-        </div>
-        <div class="card reason">
-          <h3>Você por você</h3>
-          <p>Porque você é você. E eu não trocaria isso por nada.</p>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -283,13 +200,12 @@
       <div class="card surprise">
         <button class="btn primary big" id="revealBtn">Clique aqui 💗</button>
         <div class="reveal hidden" id="revealBox">
-          <h3>Você é meu amor do jeito mais bonito.</h3>
+          <h3>Eu te amo.</h3>
           <p>
-            Se eu pudesse te dar um presente impossível, eu te daria todos os dias bons que ainda não chegaram.
-            Como eu não posso… eu te dou isso aqui: um lugar com a nossa história, e uma promessa tranquila —
-            eu vou continuar te escolhendo, com carinho, respeito e amor.
+            Eu amo estar com você, amar você, e poder te chamar de minha namorada.
+            Feliz aniversário, meu amor. Você é a melhor parte de mim.
           </p>
-          <p class="muted">Agora aperta o confete lá em cima 😄</p>
+          <p class="muted">Se quiser, aperta o confete lá em cima de novo 😄</p>
         </div>
       </div>
     </section>
@@ -301,28 +217,13 @@
             <span class="brand-mark">H</span>
             <span class="brand-name">Hanna</span>
           </div>
-          <p class="muted">
-            Feito pra você abrir quantas vezes quiser. 💗
-          </p>
         </div>
         <div class="footer-right">
-          <span class="muted">© <span id="year"></span> — feito com amor.</span>
+          <span class="muted">© <span id="year"></span></span>
         </div>
       </div>
     </footer>
   </main>
-
-  <!-- Lightbox -->
-  <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
-    <button class="lb-close" id="lbClose" aria-label="Fechar">✕</button>
-    <div class="lb-card">
-      <img id="lbImg" alt="Foto ampliada" />
-      <div class="lb-meta">
-        <div class="lb-title" id="lbTitle"></div>
-        <div class="lb-desc" id="lbDesc"></div>
-      </div>
-    </div>
-  </div>
 
   <canvas id="confetti"></canvas>
   <script src="script.js"></script>
