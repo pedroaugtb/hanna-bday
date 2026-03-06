@@ -1,6 +1,6 @@
 // Proteção por senha melhorada
 (function () {
-  const PASSWORD = "2601";
+  const PASSWORD = "2607";
   const SESSION_KEY = "hanna-love-site-unlocked";
 
   const lockScreen = document.getElementById("lockScreen");
