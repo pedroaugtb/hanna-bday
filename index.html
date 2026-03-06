@@ -19,14 +19,15 @@
   <!-- tela de senha -->
   <div class="lock-screen" id="lockScreen" aria-modal="true" role="dialog">
     <div class="lock-card">
-      <h2>Uma surpresa pra você 💗</h2>
-      <p>Digite a senha para entrar</p>
+      <div class="lock-badge">💗</div>
+      <h2>Uma surpresa pra você</h2>
+      <p class="lock-subtitle">Só quem sabe a senha pode entrar</p>
 
       <form id="passwordForm" class="lock-form">
         <input
           type="password"
           id="passwordInput"
-          placeholder="Senha"
+          placeholder="Digite a senha"
           inputmode="numeric"
           autocomplete="off"
           aria-label="Digite a senha"

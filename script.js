@@ -1,6 +1,7 @@
-// Proteção por senha simples
+// Proteção por senha melhorada
 (function () {
-  const PASSWORD = "2607";
+  const PASSWORD = "2601";
+  const SESSION_KEY = "hanna-love-site-unlocked";
 
   const lockScreen = document.getElementById("lockScreen");
   const siteContent = document.getElementById("siteContent");
@@ -10,7 +11,26 @@
 
   if (!lockScreen || !siteContent || !form || !input || !error) return;
 
-  document.body.classList.add("site-locked");
+  let attempts = 0;
+
+  const unlockSite = () => {
+    sessionStorage.setItem(SESSION_KEY, "true");
+    lockScreen.style.display = "none";
+    siteContent.classList.remove("site-hidden");
+    document.body.classList.remove("site-locked");
+
+    window.dispatchEvent(new CustomEvent("siteUnlocked"));
+  };
+
+  const isUnlocked = sessionStorage.getItem(SESSION_KEY) === "true";
+
+  if (isUnlocked) {
+    lockScreen.style.display = "none";
+    siteContent.classList.remove("site-hidden");
+  } else {
+    document.body.classList.add("site-locked");
+    siteContent.classList.add("site-hidden");
+  }
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -18,18 +38,24 @@
     const value = input.value.trim();
 
     if (value === PASSWORD) {
-      lockScreen.style.display = "none";
-      siteContent.classList.remove("site-hidden");
-      document.body.classList.remove("site-locked");
+      error.textContent = "";
+      unlockSite();
     } else {
-      error.textContent = "Senha incorreta 💔";
+      attempts += 1;
+
+      if (attempts === 1) {
+        error.textContent = "Senha incorreta 💔 dica: pizza 🍕";
+      } else {
+        error.textContent = "Senha incorreta 💔 dica: a primeira pizza 🍕";
+      }
+
       input.value = "";
       input.focus();
     }
   });
 
   window.addEventListener("load", () => {
-    input.focus();
+    if (!isUnlocked) input.focus();
   });
 })();
 
@@ -70,7 +96,15 @@
     el.textContent = full.slice(0, i++);
     if (i <= full.length) setTimeout(tick, 12);
   };
-  tick();
+
+  const startTyping = () => tick();
+
+  const alreadyUnlocked = sessionStorage.getItem("hanna-love-site-unlocked") === "true";
+  if (alreadyUnlocked) {
+    startTyping();
+  } else {
+    window.addEventListener("siteUnlocked", startTyping, { once: true });
+  }
 })();
 
 // Reveal surpresa
@@ -86,7 +120,7 @@
   });
 })();
 
-// Confetti vinho pastel (auto ao abrir + botão)
+// Confetti vinho pastel (somente após desbloquear + botão)
 (function () {
   const canvas = document.getElementById("confetti");
   const btn = document.getElementById("confettiBtn");
@@ -94,6 +128,9 @@
 
   const ctx = canvas.getContext("2d");
   let W = 0, H = 0;
+  let parts = [];
+  let running = false;
+  let tEnd = 0;
 
   const resize = () => {
     W = canvas.width = window.innerWidth * devicePixelRatio;
@@ -102,17 +139,16 @@
     canvas.style.height = window.innerHeight + "px";
     ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
   };
+
   window.addEventListener("resize", resize);
   resize();
 
   const colors = ["#7a2f3f", "#8f3a4c", "#f0c9d1", "#f4dde1", "#ffffff"];
-  let parts = [];
-  let running = false;
-  let tEnd = 0;
 
   const spawn = (n = 240) => {
     const cx = window.innerWidth / 2;
     const cy = -10;
+
     for (let i = 0; i < n; i++) {
       parts.push({
         x: cx + (Math.random() * 200 - 100),
@@ -132,9 +168,11 @@
 
   const step = () => {
     if (!running) return;
+
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
     parts = parts.filter(p => p.life > 0);
+
     for (const p of parts) {
       p.vy += p.g;
       p.x += p.vx;
@@ -156,6 +194,7 @@
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       return;
     }
+
     requestAnimationFrame(step);
   };
 
@@ -168,7 +207,11 @@
 
   if (btn) btn.addEventListener("click", blast);
 
-  window.addEventListener("load", () => {
-    setTimeout(blast, 250);
-  });
+  const alreadyUnlocked = sessionStorage.getItem("hanna-love-site-unlocked") === "true";
+
+  if (!alreadyUnlocked) {
+    window.addEventListener("siteUnlocked", () => {
+      setTimeout(blast, 250);
+    }, { once: true });
+  }
 })();
